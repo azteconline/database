@@ -15,19 +15,19 @@ jobs:
     build:
         docker:
         - image: circleci/mysql:5.7.25
-        steps:
-        - checkout
+    #    steps:
+    #    - checkout
         
-    step1:
-        steps:
-        - run:
-            name: first steps       
+    #step1:
+    #    steps:
+    #    - run:
+    #        name: first steps       
 
 workflows:
     version: 2
     build_and_test:
         jobs:
         - build
-        - step1:
-            requires:
-                - build 
+    #    - step1:
+    #        requires:
+    #            - build 
