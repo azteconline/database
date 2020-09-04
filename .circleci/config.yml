@@ -7,8 +7,6 @@ jobs:
     build:
         executor: win/default     
    
-    steps:
-    - checkout
-    - run: Write-Host 'Hello, Windows'
-
-
+        steps:
+        - checkout
+        - run: Write-Host 'Hello, Windows'
