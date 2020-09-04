@@ -20,8 +20,8 @@ jobs:
             MYSQL_DATABASE: test_db
             MYSQL_USER: user
             MYSQL_PASSWORD: passw0rd
-    #    steps:
-    #    - checkout
+        steps:
+        - checkout
         
     #step1:
     #    steps:
