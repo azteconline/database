@@ -2,12 +2,7 @@ version: 2
 
 orbs:
     # TODO: Liquibase orb
-    # TODO: Command line orb? e.g. .NET
-  
-executors:  
-  deploy-executor:
-    docker:
-      - image: circleci/python:2.7-jessie
+    win: circleci/windows@2.2.0
       
 # TODO: need any use params or just environment vars for db instance / creds?
 parameters:
@@ -17,12 +12,12 @@ parameters:
 
 jobs:
     build:
-        executor: deploy-executor
+        executor: win/default
         steps:
         - checkout
         
     step1:
-        executor: deploy-executor
+        executor: win/default 
         steps:
         - run:
             name: first steps       
