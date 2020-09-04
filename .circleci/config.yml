@@ -15,6 +15,11 @@ jobs:
     build:
         docker:
         - image: circleci/mysql:5.7.25
+            environment:
+                MYSQL_ROOT_PASSWORD: rootpw
+                MYSQL_DATABASE: test_db
+                MYSQL_USER: user
+                MYSQL_PASSWORD: passw0rd
     #    steps:
     #    - checkout
         
