@@ -2,11 +2,37 @@ version: 2.1
 
 orbs:
     win: circleci/windows@2.2.0
+    # add liquibase orb
 
 jobs:
     build:
         executor: win/default     
-   
+    
         steps:
-        - checkout
-        - run: Write-Host 'Hello, Windows'
+        - checkout            
+        - run: Write-Host 'TODO: Setup MySQL db from changelog'
+
+    seed:
+        executor: win/default     
+    
+        steps:
+        - run: Write-Host 'TODO: Seed MySQL db from INSERT sql'
+
+
+    test:
+        executor: win/default     
+    
+        steps:
+        - run: Write-Host 'TODO: Test MySQL db row counts for INSERT data'
+
+    tag:
+        executor: win/default     
+
+        steps:
+        - run: Write-Host 'TODO: Prompt user to tag the deploy (optional for rollback purposes)'
+
+    publish:
+        executor: win/default     
+    
+        steps:
+        - run: Write-Host 'TODO: Publish MySQL db to given environment'
