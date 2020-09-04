@@ -10,29 +10,29 @@ jobs:
     
         steps:
         - checkout            
-        - run: Write-Host 'TODO: Setup MySQL db from changelog'
+        - run: Write-Host 'TODO Setup MySQL db from changelog'
 
     seed:
         executor: win/default     
     
         steps:
-        - run: Write-Host 'TODO: Seed MySQL db from INSERT sql'
+        - run: Write-Host 'TODO Seed MySQL db from INSERT sql'
 
 
     test:
         executor: win/default     
     
         steps:
-        - run: Write-Host 'TODO: Test MySQL db row counts for INSERT data'
+        - run: Write-Host 'TODO Test MySQL db row counts for INSERT data'
 
     tag:
         executor: win/default     
 
         steps:
-        - run: Write-Host 'TODO: Prompt user to tag the deploy (optional for rollback purposes)'
+        - run: Write-Host 'TODO Prompt user to tag the deploy (optional for rollback purposes)'
 
     publish:
         executor: win/default     
     
         steps:
-        - run: Write-Host 'TODO: Publish MySQL db to given environment'
+        - run: Write-Host 'TODO Publish MySQL db to given environment'
