@@ -1,0 +1,33 @@
+version: 2.1
+
+orbs:
+    # TODO: Liquibase orb
+    # TODO: Command line orb? e.g. .NET
+  
+
+# TODO: need any use params or just environment vars for db instance / creds?
+parameters:
+    SOME_PARAM:
+        type: string
+        default: "blarg"
+
+jobs:
+    build:
+        docker:
+        - image: circleci/mysql:5.7.25
+        steps:
+        - checkout
+        
+    step1:
+        steps:
+        - run:
+            name: first steps       
+
+workflows:
+    version: 2
+    build_and_test:
+        jobs:
+        - build
+        - step1:
+            requires:
+                - build 
