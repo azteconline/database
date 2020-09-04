@@ -5,15 +5,10 @@ orbs:
     # TODO: Command line orb? e.g. .NET
   
 executors:  
-    mysql-executor:
-        docker:
-        - image: circleci/mysql:5.7.25
-        environment:
-            MYSQL_ROOT_PASSWORD: rootpw
-            MYSQL_DATABASE: test_db
-            MYSQL_USER: user
-            MYSQL_PASSWORD: passw0rd    
-
+  deploy-executor:
+    docker:
+      - image: circleci/python:2.7-jessie
+      
 # TODO: need any use params or just environment vars for db instance / creds?
 parameters:
     SOME_PARAM:
@@ -22,12 +17,12 @@ parameters:
 
 jobs:
     build:
-        executor: mysql-executor
+        executor: deploy-executor
         steps:
         - checkout
         
     step1:
-        executor: mysql-executor
+        executor: deploy-executor
         steps:
         - run:
             name: first steps       
