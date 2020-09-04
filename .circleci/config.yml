@@ -4,6 +4,15 @@ orbs:
     # TODO: Liquibase orb
     # TODO: Command line orb? e.g. .NET
   
+executors:  
+    mysql-executor:
+        docker:
+        - image: circleci/mysql:5.7.25
+        environment:
+            MYSQL_ROOT_PASSWORD: rootpw
+            MYSQL_DATABASE: test_db
+            MYSQL_USER: user
+            MYSQL_PASSWORD: passw0rd    
 
 # TODO: need any use params or just environment vars for db instance / creds?
 parameters:
@@ -13,17 +22,12 @@ parameters:
 
 jobs:
     build:
-        docker:
-        - image: circleci/mysql:5.7.25
-          environment:
-            MYSQL_ROOT_PASSWORD: rootpw
-            MYSQL_DATABASE: test_db
-            MYSQL_USER: user
-            MYSQL_PASSWORD: passw0rd
+        executor: mysql-executor
         steps:
         - checkout
         
     step1:
+        executor: mysql-executor
         steps:
         - run:
             name: first steps       
